@@ -28,7 +28,6 @@ public class FuncionarioService {
             return;
         }
 
-        // ── Nome ──────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(funcionario.getNome())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Nome não informado.");
@@ -47,7 +46,6 @@ public class FuncionarioService {
             return;
         }
 
-        // ── Login ─────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(funcionario.getLogin())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Login não informado.");
@@ -68,7 +66,6 @@ public class FuncionarioService {
             }
         }
 
-        // ── Senha ─────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(funcionario.getSenha())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Senha não informada.");
@@ -81,14 +78,12 @@ public class FuncionarioService {
             return;
         }
 
-        // ── Categoria ─────────────────────────────────────
         if (funcionario.getCategoria() == null) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Categoria não informada.");
             return;
         }
 
-        // ── Sucesso ───────────────────────────────────────
         funcionarios.add(funcionario);
         MensagemUtils.exibir(TipoMensagem.SUCESSO, MODULO,
                 "Funcionário cadastrado com sucesso.");
@@ -96,7 +91,6 @@ public class FuncionarioService {
 
     public Funcionario autenticar(String login, String senha) {
 
-        // ── Entradas vazias ───────────────────────────────
         if (ValidacaoUtils.textoVazio(login)) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO_LOGIN,
                     "Login não informado.");
@@ -109,7 +103,6 @@ public class FuncionarioService {
             return null;
         }
 
-        // ── Busca e valida ────────────────────────────────
         for (Funcionario funcionario : funcionarios) {
 
             if (funcionario.getLogin().equalsIgnoreCase(login)) {
@@ -144,7 +137,6 @@ public class FuncionarioService {
 
             if (func.getId() == id) {
 
-                // ── Nome ──────────────────────────────────────
                 if (ValidacaoUtils.textoVazio(novoNome)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Nome não informado.");
@@ -163,14 +155,12 @@ public class FuncionarioService {
                     return;
                 }
 
-                // ── Categoria ─────────────────────────────────
                 if (novaCategoria == null) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Categoria não informada.");
                     return;
                 }
 
-                // ── Aplica ────────────────────────────────────
                 func.setNome(novoNome);
                 func.setTelefone(novoTelefone);
                 func.setEmail(novoEmail);

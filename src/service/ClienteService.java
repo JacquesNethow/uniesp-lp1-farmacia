@@ -26,7 +26,7 @@ public class ClienteService {
             return;
         }
 
-        // ── Nome ──────────────────────────────────────────
+
         if (ValidacaoUtils.textoVazio(cliente.getNome())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Nome não informado.");
@@ -45,7 +45,6 @@ public class ClienteService {
             return;
         }
 
-        // ── CPF ───────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(cliente.getCpf())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "CPF não informado.");
@@ -66,7 +65,6 @@ public class ClienteService {
             }
         }
 
-        // ── Email ─────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(cliente.getEmail())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Email não informado.");
@@ -87,7 +85,6 @@ public class ClienteService {
             }
         }
 
-        // ── Sucesso ───────────────────────────────────────
         clientes.add(cliente);
         MensagemUtils.exibir(TipoMensagem.SUCESSO, MODULO,
                 "Cliente cadastrado com sucesso.");
@@ -103,7 +100,6 @@ public class ClienteService {
 
             if (cli.getId() == id) {
 
-                // ── Nome ──────────────────────────────────────
                 if (ValidacaoUtils.textoVazio(novoNome)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Nome não informado.");
@@ -122,7 +118,6 @@ public class ClienteService {
                     return;
                 }
 
-                // ── Email ─────────────────────────────────────
                 if (ValidacaoUtils.textoVazio(novoEmail)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Email não informado.");
@@ -143,8 +138,6 @@ public class ClienteService {
                         return;
                     }
                 }
-
-                // ── Aplica ────────────────────────────────────
                 cli.setNome(novoNome);
                 cli.setTelefone(novoTelefone);
                 cli.setEmail(novoEmail);

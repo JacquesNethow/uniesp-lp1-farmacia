@@ -4,11 +4,6 @@ JC = javac
 JAVA = java
 
 SRC =	src/Main.java								\
-		src/controller/ClienteController.java			\
-		src/controller/FornecedorController.java		\
-		src/controller/FuncionarioController.java		\
-		src/controller/MedicamentoController.java		\
-		src/controller/VendaController.java				\
 		src/enums/CategoriaFuncionario.java				\
 		src/enums/StatusMedicamento.java				\
 		src/enums/TipoMensagem.java						\

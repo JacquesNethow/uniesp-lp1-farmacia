@@ -30,7 +30,6 @@ public class MedicamentoService {
             return;
         }
 
-        // ── Nome ──────────────────────────────────────────
         if (ValidacaoUtils.textoVazio(medicamento.getNome())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Nome não informado.");
@@ -50,22 +49,18 @@ public class MedicamentoService {
                 return;
             }
         }
-
-        // ── Preço ─────────────────────────────────────────
         if (!ValidacaoUtils.numeroPositivo(medicamento.getPreco())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Preço inválido. Deve ser maior que zero.");
             return;
         }
 
-        // ── Estoque ───────────────────────────────────────
         if (!ValidacaoUtils.estoqueValido(medicamento.getEstoque())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Estoque inválido. Não pode ser negativo.");
             return;
         }
 
-        // ── Validade ──────────────────────────────────────
         if (!DataUtils.dataValida(medicamento.getValidade())) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Data de validade não informada.");
@@ -79,7 +74,6 @@ public class MedicamentoService {
             return;
         }
 
-        // ── Sucesso + aviso de validade próxima ───────────
         medicamentos.add(medicamento);
         MensagemUtils.exibir(TipoMensagem.SUCESSO, MODULO,
                 "Medicamento cadastrado com sucesso.");
@@ -103,22 +97,18 @@ public class MedicamentoService {
         for (Medicamento med : medicamentos) {
 
             if (med.getCodigo() == codigo) {
-
-                // ── Preço ─────────────────────────────────────
                 if (!ValidacaoUtils.numeroPositivo(novoPreco)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Preço inválido. Deve ser maior que zero.");
                     return;
                 }
 
-                // ── Estoque ───────────────────────────────────
                 if (!ValidacaoUtils.estoqueValido(novoEstoque)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Estoque inválido. Não pode ser negativo.");
                     return;
                 }
 
-                // ── Validade ──────────────────────────────────
                 if (!DataUtils.dataValida(novaValidade)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Data de validade não informada.");
@@ -131,7 +121,6 @@ public class MedicamentoService {
                     return;
                 }
 
-                // ── Aplica ────────────────────────────────────
                 med.setPreco(novoPreco);
                 med.setEstoque(novoEstoque);
                 med.setValidade(novaValidade);

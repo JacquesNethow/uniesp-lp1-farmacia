@@ -27,7 +27,6 @@ public class VendaService {
             return;
         }
 
-        // ── Participantes ─────────────────────────────────
         if (venda.getCliente() == null) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Cliente não informado.");
@@ -40,7 +39,6 @@ public class VendaService {
             return;
         }
 
-        // ── Medicamento ───────────────────────────────────
         if (venda.getMedicamento() == null) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Medicamento não informado.");
@@ -62,7 +60,6 @@ public class VendaService {
                             + medicamento.getValidade() + ").");
         }
 
-        // ── Quantidade e estoque ──────────────────────────
         if (venda.getQuantidade() <= 0) {
             MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                     "Quantidade inválida. Deve ser maior que zero.");
@@ -84,7 +81,6 @@ public class VendaService {
             return;
         }
 
-        // ── Processa a venda ──────────────────────────────
         medicamento.setEstoque(
                 medicamento.getEstoque() - venda.getQuantidade()
         );

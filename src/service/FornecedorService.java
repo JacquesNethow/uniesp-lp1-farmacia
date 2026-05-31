@@ -105,7 +105,6 @@ public class FornecedorService {
 
             if (forn.getId() == id) {
 
-                // ── Nome ──────────────────────────────────────
                 if (ValidacaoUtils.textoVazio(novoNome)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Nome não informado.");
@@ -124,7 +123,6 @@ public class FornecedorService {
                     return;
                 }
 
-                // ── Email ─────────────────────────────────────
                 if (ValidacaoUtils.textoVazio(novoEmail)) {
                     MensagemUtils.exibir(TipoMensagem.ERRO, MODULO,
                             "Email não informado.");
@@ -146,7 +144,6 @@ public class FornecedorService {
                     }
                 }
 
-                // ── Aplica ────────────────────────────────────
                 forn.setNome(novoNome);
                 forn.setTelefone(novoTelefone);
                 forn.setEmail(novoEmail);
